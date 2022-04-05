@@ -2,7 +2,6 @@ plugins {
     id 'maven-publish'
     id 'com.android.library'
 }
-
 afterEvaluate {
     publishing {
         publications {
@@ -18,6 +17,12 @@ afterEvaluate {
 }
 android {
     compileSdk 31
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }}
 
     defaultConfig {
         minSdk 23
