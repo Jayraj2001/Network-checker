@@ -2,12 +2,10 @@ plugins {
     id 'maven-publish'
     id 'com.android.library'
 }
-
 afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
-                from components.release
+            aar(MavenPublication) {
                 groupId = 'com.github.Jayraj2001'
                 artifactId = 'Network-checker'
                 version = '0.1.0'
@@ -15,7 +13,6 @@ afterEvaluate {
         }
     }
 }
-
 android {
     compileSdk 31
 
@@ -23,6 +20,7 @@ android {
         singleVariant('release') {
             withSourcesJar()
             withJavadocJar()
+
         }}
 
     defaultConfig {
