@@ -6,12 +6,7 @@ task androidSourcesJar(type: Jar) {
     classifier 'sources'
     from android.sourceSets.main.java.srcDirs
 }
-repositories {
-    google()
-    mavenCentral()
-    maven {url 'https://www.jitpack.io'}
 
-}
 
 project.afterEvaluate {
     publishing {
@@ -29,6 +24,12 @@ project.afterEvaluate {
 }
 android {
     compileSdk 31
+    repositories {
+        google()
+        mavenCentral()
+        maven {url 'https://www.jitpack.io'}
+
+    }
 
     publishing {
         singleVariant('release') {
