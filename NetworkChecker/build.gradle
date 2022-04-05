@@ -24,12 +24,6 @@ project.afterEvaluate {
 }
 android {
     compileSdk 31
-    repositories {
-        google()
-        mavenCentral()
-        maven {url 'https://www.jitpack.io'}
-
-    }
 
     publishing {
         singleVariant('release') {
