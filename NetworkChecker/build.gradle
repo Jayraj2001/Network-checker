@@ -5,10 +5,11 @@ plugins {
 afterEvaluate {
     publishing {
         publications {
-            aar(MavenPublication) {
+            release(MavenPublication) {
+                from components.release
                 groupId = 'com.github.Jayraj2001'
                 artifactId = 'Network-checker'
-                version = '0.1.0'
+                version = android.defaultConfig.versionName
             }
         }
     }
