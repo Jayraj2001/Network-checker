@@ -1,7 +1,20 @@
 plugins {
+    id 'maven-publish'
     id 'com.android.library'
 }
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
 
+                groupId = 'com.github.Jayraj2001'
+                artifactId = 'Network-checker'
+                version = '0.1.0'
+            }
+        }
+    }
+}
 android {
     compileSdk 31
 
@@ -20,8 +33,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
