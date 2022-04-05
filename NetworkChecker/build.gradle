@@ -6,6 +6,7 @@ task androidSourcesJar(type: Jar) {
     classifier 'sources'
     from android.sourceSets.main.java.srcDirs
 }
+
 project.afterEvaluate {
     publishing {
         publications {
@@ -14,6 +15,8 @@ project.afterEvaluate {
                 groupId = 'com.github.Jayraj2001'
                 artifactId = 'Network-checker'
                 version = '0.1.0'
+
+                artifact androidSourcesJar
             }
         }
     }
@@ -25,7 +28,6 @@ android {
         singleVariant('release') {
             withSourcesJar()
             withJavadocJar()
-
         }}
 
     defaultConfig {
